@@ -22,6 +22,7 @@ const ActionHandler = (action: YoutubeActions, bot: Telegraf) => async (ctx: Con
         await ctx.replyWithAudio({ source: audio }, {
             caption: videoInfo.videoDetails.title,
         })
+            .catch(() => ctx.reply(reply.maxSizeError()))
     }
 
     const replyWithVideo = async () => {
@@ -31,6 +32,7 @@ const ActionHandler = (action: YoutubeActions, bot: Telegraf) => async (ctx: Con
             caption: videoInfo.videoDetails.title,
             supports_streaming: true,
         })
+            .catch(() => ctx.reply(reply.maxSizeError()))
     }
 
     if (action === YoutubeActions.audio) {

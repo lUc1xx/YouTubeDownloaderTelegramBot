@@ -9,7 +9,9 @@ const reply = {
 
     formatChoise: () => `download this video as audio or video?`,
 
-    downloading: () => 'Downloading in progress... Please wait. \n\nIt can take some time'
+    downloading: () => 'Downloading in progress... Please wait. \n\nIt can take some time',
+
+    maxSizeError: () => "At the moment, the maximum allowed file size is 50MB."
 }
 
 export default reply;
